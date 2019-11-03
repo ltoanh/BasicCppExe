@@ -1,0 +1,9 @@
+Prime 4. Cho số tự nhiên N. Nhiệm vụ của bạn là in ra ước số nguyên tố nhỏ nhất của các số từ 1 đến
+N. Ước số nguyên tố nhỏ nhất của 1 là 1. Ước số nguyên tố nhỏ nhất của các số chẵn là 2. Ước số
+nguyên tố nhỏ nhất của các số nguyên tố là chính nó.
+Input:
+x Dòng đầu tiên đưa vào số lượng test T.
+x Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test là một số N được ghi trên một dòng.
+x T, N thỏa mãn ràng buộc: 1≤T≤100; 1≤N≤10000.
+Output:
+x Đưa ra kết quả mỗi test theo từng dòng.

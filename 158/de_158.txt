@@ -1,0 +1,8 @@
+String 10. Cho xâu ký tự S bao gồm các ký tự số. Nhiệm vụ của bạn là hãy điền các phép toán +
+hoặc nhân giữa các chữ số để có được giá trị lớn nhất.
+Input:
+x Dòng đầu tiên đưa vào số lượng bộ test T.
+x Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test là một xâu ký tự S.
+x T, S thỏa mãn ràng buộc: 1≤ T ≤100; 0≤ Length(S) ≤10^5.
+Output:
+x Đưa ra kết quả mỗi test theo từng dòng

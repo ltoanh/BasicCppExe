@@ -1,0 +1,8 @@
+Modulo 9. Cho hai số n và r, hãy tìm C(n, r)% P. Trong đó, P = 109+7.
+Input:
+x Dòng đầu tiên đưa vào số lượng test T.
+x Những dòng kế tiếp đưa vào các bộ test. Mỗi test là bộ đôi n, r. Các số được viết cách
+nhau một vài khoảng trống.
+x T, n, r thỏa mãn ràng buộc : 1≤T≤100; 0≤n≤10^3; 1≤ r ≤800.
+Output:
+x Đưa ra kết quả mỗi test theo từng dòng.

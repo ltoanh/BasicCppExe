@@ -1,0 +1,6 @@
+﻿  Source.cpp
+e:\code\bt tren lp\c++\baitap\baitapc++\154\project1\project1\source.cpp(8): warning C4018: '<': signed/unsigned mismatch
+e:\code\bt tren lp\c++\baitap\baitapc++\154\project1\project1\source.cpp(13): warning C4018: '<': signed/unsigned mismatch
+e:\code\bt tren lp\c++\baitap\baitapc++\154\project1\project1\source.cpp(20): warning C4018: '<': signed/unsigned mismatch
+e:\code\bt tren lp\c++\baitap\baitapc++\154\project1\project1\source.cpp(25): warning C4018: '<': signed/unsigned mismatch
+  Project1.vcxproj -> E:\Code\BT tren lp\C++\baitap\BAITAPC++\154\Project1\Debug\Project1.exe

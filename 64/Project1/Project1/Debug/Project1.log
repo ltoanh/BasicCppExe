@@ -1,0 +1,9 @@
+﻿  Source.cpp
+e:\code\bt tren lp\c++\baitap\baitapc++\64\project1\project1\source.cpp(22): error C3867: 'std::vector<std::vector<int,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>>::begin': non-standard syntax; use '&' to create a pointer to member
+          with
+          [
+              _Ty=int
+          ]
+e:\code\bt tren lp\c++\baitap\baitapc++\64\project1\project1\source.cpp(22): error C2672: 'sort': no matching overloaded function found
+e:\code\bt tren lp\c++\baitap\baitapc++\64\project1\project1\source.cpp(22): error C2780: 'void std::sort(const _RanIt,const _RanIt,_Pr)': expects 3 arguments - 2 provided
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(4029): note: see declaration of 'std::sort'

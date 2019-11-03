@@ -1,0 +1,81 @@
+﻿  Source.cpp
+e:\code\bt tren lp\c++\baitap\baitapc++\63\project1\project1\source.cpp(7): warning C4018: '<': signed/unsigned mismatch
+e:\visual\2017\vc\tools\msvc\14.16.27023\include\xutility(1108): error C2664: 'bool (int,std::vector<int,std::allocator<_Ty>>)': cannot convert argument 2 from 'int' to 'std::vector<int,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=int
+          ]
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\xutility(1108): note: Constructor for class 'std::vector<int,std::allocator<_Ty>>' is declared 'explicit'
+          with
+          [
+              _Ty=int
+          ]
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\xutility(1107): note: see reference to function template instantiation 'bool std::_Debug_lt_pred<bool(__cdecl *&)(int,std::vector<int,std::allocator<_Ty>>),int&,int&>(_Pr,_Ty1,_Ty2) noexcept(<expr>)' being compiled
+          with
+          [
+              _Ty=int,
+              _Pr=bool (__cdecl *&)(int,std::vector<int,std::allocator<int>>),
+              _Ty1=int &,
+              _Ty2=int &
+          ]
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(4000): note: see reference to function template instantiation 'std::pair<_RanIt,_RanIt> std::_Partition_by_median_guess_unchecked<_RanIt,bool(__cdecl *)(int,std::vector<int,std::allocator<_Ty>>)>(_RanIt,_RanIt,_Pr)' being compiled
+          with
+          [
+              _RanIt=int *,
+              _Ty=int,
+              _Pr=bool (__cdecl *)(int,std::vector<int,std::allocator<int>>)
+          ]
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(4034): note: see reference to function template instantiation 'void std::_Sort_unchecked<int*,bool(__cdecl *)(int,std::vector<int,std::allocator<_Ty>>)>(_RanIt,_RanIt,int,_Pr)' being compiled
+          with
+          [
+              _Ty=int,
+              _RanIt=int *,
+              _Pr=bool (__cdecl *)(int,std::vector<int,std::allocator<int>>)
+          ]
+  e:\code\bt tren lp\c++\baitap\baitapc++\63\project1\project1\source.cpp(28): note: see reference to function template instantiation 'void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,bool(__cdecl *)(int,std::vector<_Ty,std::allocator<_Ty>>)>(const _RanIt,const _RanIt,_Pr)' being compiled
+          with
+          [
+              _Ty=int,
+              _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>,
+              _Pr=bool (__cdecl *)(int,std::vector<int,std::allocator<int>>)
+          ]
+e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(3907): error C2664: 'bool (int,std::vector<int,std::allocator<_Ty>>)': cannot convert argument 2 from 'int' to 'std::vector<int,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=int
+          ]
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(3907): note: Constructor for class 'std::vector<int,std::allocator<_Ty>>' is declared 'explicit'
+          with
+          [
+              _Ty=int
+          ]
+e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(3914): error C2664: 'bool (int,std::vector<int,std::allocator<_Ty>>)': cannot convert argument 2 from 'int' to 'std::vector<int,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=int
+          ]
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(3914): note: Constructor for class 'std::vector<int,std::allocator<_Ty>>' is declared 'explicit'
+          with
+          [
+              _Ty=int
+          ]
+e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(3929): error C2664: 'bool (int,std::vector<int,std::allocator<_Ty>>)': cannot convert argument 2 from 'int' to 'std::vector<int,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=int
+          ]
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(3929): note: Constructor for class 'std::vector<int,std::allocator<_Ty>>' is declared 'explicit'
+          with
+          [
+              _Ty=int
+          ]
+e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(3949): error C2664: 'bool (int,std::vector<int,std::allocator<_Ty>>)': cannot convert argument 2 from 'int' to 'std::vector<int,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=int
+          ]
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\algorithm(3949): note: Constructor for class 'std::vector<int,std::allocator<_Ty>>' is declared 'explicit'
+          with
+          [
+              _Ty=int
+          ]

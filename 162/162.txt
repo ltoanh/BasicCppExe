@@ -1,0 +1,5 @@
+4
+Print the number of words
+Print the number of words present in the string
+\t\ndef   ghi
+one   two   three  \t  four 

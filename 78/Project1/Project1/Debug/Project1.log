@@ -1,0 +1,10 @@
+﻿  Source.cpp
+e:\code\bt tren lp\c++\baitap\baitapc++\78\project1\project1\source.cpp(23): warning C4018: '<': signed/unsigned mismatch
+e:\code\bt tren lp\c++\baitap\baitapc++\78\project1\project1\source.cpp(29): error C2678: binary '<': no operator found which takes a left-hand operand of type 'int' (or there is no acceptable conversion)
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\system_error(319): note: could be 'bool std::operator <(const std::error_condition &,const std::error_condition &) noexcept'
+  e:\visual\2017\vc\tools\msvc\14.16.27023\include\system_error(312): note: or       'bool std::operator <(const std::error_code &,const std::error_code &) noexcept'
+  e:\code\bt tren lp\c++\baitap\baitapc++\78\project1\project1\source.cpp(29): note: while trying to match the argument list '(int, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>)'
+          with
+          [
+              _Ty=int
+          ]
