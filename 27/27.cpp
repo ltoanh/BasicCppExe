@@ -1,26 +1,42 @@
-//time
-#include<bits/stdc++.h>
-#define ll long long
-#define forb(i,a,n) for(int i=a; i<=n; ++i)
-#define forn(i,a,n) for(int i=a; i<n; ++i)
-#define bfor(i,a,n) for(int i=a; i>=n; --i)
-#define nfor(i,a,n) for(int i=a; i>n; --i)
+//wr
+/*
+gcd(a,m)=1?a*x+m*y=1;
+=>a*x dong du 1(mod m)
+x = y1;
+y = x1 - (a/b) *  y1;
+---
+x=1;
+y=0;
+*/
+#include<iostream>
+#include<algorithm>
 using namespace std;
-#define fin cin
-#define fout cout
-main(){
-	int t, a, m;
-//	ifstream fin("27.in", ios::in);
-//	ofstream fout("27.out", ios::out);
-	fin>>t;
-	while(t--){
-		fin>>a>>m;
-		int i=1;
-		int temp;
-		while((temp=m*i+1)%a){
-			i++;
-		}
-		fout<<temp/a<<endl;
+int gcd_extend(int a, int m, int *x, int *y){
+	if(m==0){
+		*x=1;
+		*y=0;
+		return a;
 	}
+	int x1, y1;
+	int gcd= gcd_extend(m, a%m, &x1, &y1);
+	*x=y1;
+	*y=x1-(a/m)*y1;
+	return gcd;
 }
-
+int check(int a, int m){
+	int x, y;
+	if(gcd_extend(a,m,&x,&y)!=1){
+		return -1;
+	}
+	return (x%m + m)%m;
+}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int a, m;
+		cin>>a>>m;
+		cout<<check(a,m)<<endl;
+	}
+	return 0;
+}
