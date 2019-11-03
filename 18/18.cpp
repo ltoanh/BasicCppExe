@@ -1,9 +1,7 @@
+//time
 #include<bits/stdc++.h>
 #define ll long long
-#define forb(i,a,n) for(int i=a; i<=n; ++i)
-#define forn(i,a,n) for(int i=a; i<n; ++i)
-#define bfor(i,a,n) for(int i=a; i>=n; --i)
-#define nfor(i,a,n) for(int i=a; i>n; --i)
+#define forb(i,a,n) for(ll i=a; i<=n; ++i)
 using namespace std;
 #define fin cin
 #define fout cout
@@ -15,10 +13,10 @@ main(){
 	fin>>t;
 	while(t--){
 		fin>>n;
-		int s=1;
-		forb(i,2,sqrt(n)){
+		ll s=1;
+		for(int i=2; i*i<=n; ++i){
 			if(n%i==0){
-				if(i==sqrt(n)){
+				if(i*i==n){
 					s+=i;
 				}
 				else{
@@ -26,7 +24,6 @@ main(){
 				}
 			}
 		}
-//		cout<<s<<endl;
 		if(s==n) fout<<1;
 		else fout<<0;
 		fout<<endl;
