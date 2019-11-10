@@ -5,12 +5,11 @@
 #define bfor(i,a,n) for(int i=a; i>=n; --i)
 #define nfor(i,a,n) for(int i=a; i>n; --i)
 using namespace std;
-#define cin fin
-#define fout cout
+#define fin cin
 main(){
 	int t,n,m;
-	ifstream fin("15.in", ios::in );
-	ofstream fout("15.out", ios::out );
+//	ifstream fin("15.in", ios::in );
+//	ofstream fout("15.out", ios::out );
 	cin>>t;
 	while(t--){
 		fin>>n>>m;

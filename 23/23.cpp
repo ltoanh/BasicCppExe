@@ -8,7 +8,7 @@
 #define fin cin
 #define fout cout
 using namespace std;
-
+#define int long long
 main(){
 	int t, n;
 //	ifstream fin("23.in", ios::in );
@@ -17,22 +17,28 @@ main(){
 	while(t--){
 		fin>>n;
 		int dem=0;
-		vector<bool> a(n+1, true);
-		vector<int> b;
+		int m=sqrt(n);
+		/*sang nguyen to*/
+		vector<bool> a(m+1, true);
 		a.at(0)=false; a.at(1)=false;
-		for(int i=2; i*i<=n; ++i){
+		for(ll i=2; i*i<=m; ++i){
 			if(a.at(i)){
-				b.push_back(i);
-				for(int j=i*i; j<=n; j+=i){
+				for(ll j=i*i; j<=m; j+=i){
 					if(a.at(j)){
 						a.at(j)=false;	
 					}
 				}
 			}
 		}
-		for(int i=0; i<b.size(); ++i){
-			if(b.at(i)*b.at(i)<=n){
-				dem++;
+		for(ll i=2; i<=m; ++i){
+			if(a.at(i)){ //neu i la snt
+				if(i*i<=n){
+//					cout<<i<<" ";
+					dem++;
+				}
+				else{
+					break;
+				}
 			}
 		}
 		fout<<dem<<endl;

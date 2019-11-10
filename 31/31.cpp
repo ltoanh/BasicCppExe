@@ -1,4 +1,3 @@
-//time
 #include<bits/stdc++.h>
 #define ll long long
 #define forb(i,a,n) for(int i=a; i<=n; ++i)
@@ -8,6 +7,17 @@
 #define fin cin
 #define fout cout
 using namespace std;
+inline int modul(int a, int b, ll p){
+	ll x=1, y=a;
+	while(b>0){
+		if(b%2==1){
+			x=(x*y)%p;
+		}
+		y=(y*y)%p;
+		b/=2;
+	}
+	return x%p;
+}
 inline ll reduce(string a, ll m){
 	ll re=0;
 	forn(i,0,a.size()){
@@ -17,13 +27,8 @@ inline ll reduce(string a, ll m){
 	return re;
 }
 inline ll modul(string a, ll b, ll m){
-	ll ans=reduce(a,m);
-	ll mul=ans;
-	ll mod=1;
-	forn(i,1,b){
-		ans=(ans*mul)%m;
-	}
-	return ans;
+	ll ans=reduce(a,m);	
+	return modul(ans,b,m);
 }
 main(){
 	int t;
