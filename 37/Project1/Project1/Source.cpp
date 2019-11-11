@@ -42,7 +42,6 @@ string sub(string num1, string num2)
 		else {
 			du = 0;
 		}
-//		cout << sub << " ";
 		s.push_back(sub + '0');
 	}
 	for (int i = len2; i < len1; ++i) {
@@ -54,7 +53,6 @@ string sub(string num1, string num2)
 		else {
 			du = 0;
 		}
-//		cout << sub << " ";
 		s.push_back(sub + '0');
 	}
 	reverse(s.begin(), s.end());

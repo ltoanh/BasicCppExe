@@ -1,4 +1,3 @@
-//siggev
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -10,19 +9,17 @@ using namespace std;
 #define int long long
 main()
 {
-	ll t, n;
-//	ifstream fin("51.txt", ios::in);
-//	ofstream fout("51out.txt", ios::out);
+	int t, n;
 	fin >> t;
 	while (t--)
 	{
 		fin >> n;
-		vector<ll> b(n+1,0);
+		vector<ll> b(n+7,0);
 		ll x;
 		for (ll i = 0; i < n; ++i)
 		{
 			fin >> x;
-			if (x >= 0)
+			if (x >= 0 && x<=n) //note
 			{
 				b[x]++;
 			}
@@ -40,5 +37,4 @@ main()
 		}
 		cout << endl;
 	}
-//	system("pause");
 }

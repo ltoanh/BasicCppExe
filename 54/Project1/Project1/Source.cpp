@@ -1,14 +1,15 @@
 #include<iostream>
-#include<fstream>
 #include<algorithm>
+#include<fstream>
+
 #define fin cin
-#define fout cout
-using namespace std;
+
+using namespace std; 
 
 int main() {
 	int t, n;
-//	ifstream fin("54.txt", ios::in);
-//	ofstream fout("54.out", ios::out);
+//	ifstream fin("55.txt", ios::in);
+//	ofstream fout("55.out", ios::out);
 	fin >> t;
 	while (t--) {
 		fin >> n;
@@ -17,26 +18,20 @@ int main() {
 		{
 			fin >> a[i];
 		}
-		for (int i = 2; i <= n; ++i)
+		sort(a + 1, a + n + 1);
+		int b[1007];
+		int tm = n / 2 + (n % 2 != 0 ? 1 : 0);
+		for (int i = 1, j = 1; i <= tm, j <= n; ++i, j+=2)
 		{
-			if (i % 2 == 0)
-			{
-				if (a[i] < a[i - 1])
-				{
-					swap(a[i], a[i - 1]);
-				}
-			}
-			else
-			{
-				if (a[i] > a[i - 1])
-				{
-					swap(a[i], a[i - 1]);
-				}
-			}
+			b[j] = a[i];
+		}
+		for (int i = tm+1, j = 2; i <= n, j <= n; ++i, j += 2)
+		{
+			b[j] = a[i];
 		}
 		for (int i = 1; i <= n; ++i)
 		{
-			cout << a[i] << " ";
+			cout << b[i] << " ";
 		}
 		cout << endl;
 	}
