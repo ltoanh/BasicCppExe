@@ -29,7 +29,7 @@ de bai k noi ro:
 #include<algorithm>
 
 using namespace std;
-
+//loai bo chu so 0 thua
 string loaibo(string s){
 	reverse(s.begin(), s.end());
 	int dem=0;
@@ -46,7 +46,7 @@ string loaibo(string s){
 	reverse(s.begin(), s.end());
 	return s;
 }
-
+//tinh tong
 string sum(string X, string Y) {
 	int len1 = X.size(), len2 = Y.size();
 	if (len1 < len2) {
@@ -73,7 +73,7 @@ string sum(string X, string Y) {
 	reverse(s.begin(), s.end());
 	return s;
 }
-
+//tinh hieu
 string sub(string num1, string num2){
 	string s = "";
 	int len1 = num1.size(), len2 = num2.size();
@@ -111,7 +111,7 @@ string sub(string num1, string num2){
 //	cout<<s<<endl;
 	return s;
 }
-
+//tim so du 
 int sochia(string x, vector<string> a){
     int vt = 0;
     int len=x.size();
