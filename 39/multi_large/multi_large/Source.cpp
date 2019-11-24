@@ -51,34 +51,30 @@ string sum(string X, string Y) {
 	reverse(s.begin(), s.end());
 	return s;
 }
-
+string mul(string Y, string X){
+	vector<string> a(10, "0");
+	for (int i = 1; i < 10; ++i) {
+		a[i] = sum(a[i - 1], X);
+	}
+	string mul = "0";
+	reverse(Y.begin(), Y.end());
+	for (int i = 0; i < Y.size(); ++i) {
+		string temp = a[Y[i] - '0'];
+		for (int j = 1; j <= i; ++j) {
+			temp += '0';
+		}
+		mul = sum(temp, mul);
+	}
+	return mul;
+}
 int main() {
 	int t;
 	cin >> t;
 	while (t--) {
 		string X, Y;
 		cin >> X >> Y;
-		vector<string> a(10, "0");
-		for (int i = 1; i < 10; ++i) {
-			a[i] = sum(a[i - 1], X);
-		}
-
-		//		for (int i = 0; i < 10; ++i) {
-		//			cout << a[i] << endl;
-		//		} 
-		//		cout<<endl;
-		string mul = "0";
-		reverse(Y.begin(), Y.end());
-		for (int i = 0; i < Y.size(); ++i) {
-			string temp = a[Y[i] - '0'];
-			for (int j = 1; j <= i; ++j) {
-				temp += '0';
-			}
-			//			cout << temp << " ";
-			mul = sum(temp, mul);
-			//			cout<<mul<<endl;
-		}
-		cout << mul << endl;
+		string kq = mul(Y,X);
+		cout << kq << endl;
 	}
 	//	system("pause");
 	return 0;

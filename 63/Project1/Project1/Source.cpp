@@ -1,3 +1,4 @@
+//lam sai
 #include<iostream>
 #include<algorithm>
 #include<fstream>
@@ -17,6 +18,7 @@ int main() {
 			fin >> x;
 			a.push_back(x);
 		}
+		sort(a.begin(), a.end());
 		for (int i = 0; i < m; ++i) {
 			int x;
 			fin >> x;
