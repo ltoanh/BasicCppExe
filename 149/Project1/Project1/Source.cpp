@@ -18,14 +18,6 @@ int main() {
 		for (int i = 0; i < s.size(); ++i) {
 			str.insert(tolower(s[i]));
 		}
-		/*
-		set<char>::iterator it;
-		for (it = str.begin(); it != str.end(); ++it) {
-			cout << *it << " ";
-		}
-		cout << endl;
-		cout << str.size() << endl;
-		*/
 		cout << (str.size() + k >= 26 ? 1 : 0) << endl;
 	}
 	system("pause");

@@ -1,40 +1,21 @@
-#include<iostream>
-#include<algorithm>
-#include<fstream>
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
 
-#define fin cin
-
-using namespace std; 
-
-int main() {
-	int t, n;
-//	ifstream fin("55.txt", ios::in);
-//	ofstream fout("55.out", ios::out);
-	fin >> t;
-	while (t--) {
-		fin >> n;
-		int a[1007];
-		for (int i = 1; i <= n; ++i)
-		{
-			fin >> a[i];
-		}
-		sort(a + 1, a + n + 1);
-		int b[1007];
-		int tm = n / 2 + (n % 2 != 0 ? 1 : 0);
-		for (int i = 1, j = 1; i <= tm, j <= n; ++i, j+=2)
-		{
-			b[j] = a[i];
-		}
-		for (int i = tm+1, j = 2; i <= n, j <= n; ++i, j += 2)
-		{
-			b[j] = a[i];
-		}
-		for (int i = 1; i <= n; ++i)
-		{
-			cout << b[i] << " ";
-		}
-		cout << endl;
+main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int n, a[1007];
+		cin>>n;
+		for(int i=0; i<n; ++i) cin>>a[i];
+		sort(a, a+n);
+		int b[n+7];
+		int m=n/2+n%2;
+		for(int i=0; i<m; ++i) b[i*2]=a[i];
+		for(int i=m; i<n; ++i) b[(i-m)*2+1]=a[i];
+		for(int i=0; i<n; ++i) cout<<b[i]<<" ";
+		cout<<endl;
 	}
-//	system("pause");
-	return 0;
 }
+

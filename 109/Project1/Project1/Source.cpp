@@ -1,45 +1,25 @@
-#include<iostream>
-#include<algorithm>
-#include<fstream>
-#include<vector>
-#include <utility>
-#define cout fout
+#include<bits/stdc++.h>
+#define ll long long
 using namespace std;
-bool cmp(const pair<int, int> &x, const pair<int, int> &y) {
-	if (x.second == y.second) {
-		return x.first < y.first;
-	}
-	return x.second > y.second;
+int t, n;
+int a[10007];
+vector<int> dem;
+bool cmp(int x, int y){
+	if(dem[x]==dem[y]) return x<y;
+	return dem[x]>dem[y];
 }
-int main() {
-	int t;
-	ifstream fin("109.txt", ios::in);
-	ofstream fout("109out.txt", ios::out);
-	fin >> t;
-	while (t--) {
-		int n, a[10007] = { 0 };
-		fin >> n;
-		int M = 0;
-		vector< pair<int, int> > b;
-		for (int i = 0; i < n; ++i) {
-			int x;
-			fin >> x;
-			M = max(M, x);
-			a[x]++;
+main(){
+	cin>>t;
+	while(t--){
+		dem.assign(100007,0);
+		cin>>n;
+		for(int i=0; i<n; ++i){
+			cin>>a[i];
+			dem[a[i]]++;
 		}
-		for (int i = 1; i <= M; ++i) {
-			if (a[i] > 0) {
-				b.push_back({ i,a[i] });
-			}
-		} 
-		sort(b.begin(), b.end(), cmp);
-		for (int i = 0; i < b.size(); ++i) {
-			for (int j = 1; j <= b.at(i).second; ++j) {
-				cout << b.at(i).first << " ";
-			}
-		}
-		cout << endl; 
+		sort(a, a+n, cmp);
+		for(int i=0; i<n; ++i) cout<<a[i]<<" ";
+		cout<<endl;
 	}
-	system("pause");
-	return 0;
 }
+

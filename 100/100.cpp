@@ -1,11 +1,10 @@
 #include<bits/stdc++.h>
 #define ll long long
 using namespace std;
-
+#define fin cin
+#define fout cout
 main(){
 	int t;
-	ifstream fin("100.txt", ios::in);
-	ofstream fout("100out.txt", ios::out);
 	fin>>t;
 	while(t--){
 		int n;

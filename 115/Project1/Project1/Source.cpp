@@ -1,37 +1,24 @@
-#include<iostream>
-#include<fstream>
-#include<vector>
-#define cout fout
+#include<bits/stdc++.h>
+#define ll long long
 using namespace std;
-
-int main() {
-	int t;
-	ifstream fin("115.txt", ios::in);
-	ofstream fout("115out.txt", ios::out);
-	fin >> t;
-	while (t--) {
-		int n;
-		fin >> n;
-		int first = INT_MAX, second = INT_MAX;
-		for (int i = 0; i < n; ++i) {
-			int x;
-			fin >> x;
-			if (x < first) {
-				second = first;
-				first = x;
-			}
-			else if (x < second && x != first) {
-				second = x;
-			}
+int t, n, k;
+	
+main(){
+	cin>>t;
+	while(t--){
+		cin>>n;
+		set<int> a;
+		for(int i=0; i<n; ++i){
+			cin>>k; a.insert(k);
 		}
-		if (second == INT_MAX || second == first) {
-			cout << -1;
+		if(a.size()<2) cout<<-1;
+		else{
+			set<int>::iterator it=a.begin();
+			cout<<*it<<" ";
+			it++;
+			cout<<*it;
 		}
-		else {
-			cout << first << " " << second;
-		}
-		cout << endl;
+		cout<<endl;
 	}
-	system("pause");
-	return 0;
 }
+

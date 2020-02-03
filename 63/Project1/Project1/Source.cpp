@@ -1,50 +1,37 @@
-//lam sai
-#include<iostream>
-#include<algorithm>
-#include<fstream>
-#include<vector>
+#include<bits/stdc++.h>
+#define ll long long
+#define int ll
 using namespace std;
-#define fin cin
-int main() {
-	int t, n, m;
-//	ifstream fin("63.txt", ios::in);
-//	ofstream fout("63out.txt", ios::out);
-	fin >> t;
-	while (t--) {
-		fin >> n >> m;
-		vector<int> a, b;
-		for (int i = 0; i < n; ++i) {
-			int x;
-			fin >> x;
-			a.push_back(x);
-		}
-		sort(a.begin(), a.end());
-		for (int i = 0; i < m; ++i) {
-			int x;
-			fin >> x;
-			b.push_back(x);
-		}
-		vector<int> c;
-		for (int i = 0; i < m; ++i) {
-			for(int j = 0; j < n; ++j){
-				if(a[j]>0){
-					if(a[j]==b[i]){
-						c.push_back(a[j]);
-						a[j]=0;
-					}
-				}
-			}
-		}
-		for(int i=0; i<n; ++i){
-			if(a[i]!=0){
-				c.push_back(a[i]);
-			}
-		}
-		for(int i=0; i<c.size();i++){
-			cout<<c[i]<<" ";
-		}
-		cout << endl;
+vector<int> Map;
+bool cmp(int a, int b){
+	if(Map[a]){
+		if(Map[b]) return Map[a]<Map[b];
+		else return 1;
 	}
-//	system("pause");
-	return 0;
+	else{
+		if(Map[b]) return 0;
+		else return a<b;
+	}
 }
+main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int n, m, x;
+		cin>>n>>m;
+		vector<int> a(n+7);
+		vector<int> b(m+7);
+		Map.assign(1000007,0);
+		for(int i=0; i<n; ++i){
+			cin>>x; a.push_back(x);
+		}
+		for(int i=0; i<m; ++i){
+			cin>>x; b.push_back(x);
+			Map[x]=i+1;
+		}
+		sort(a.begin(), a.end(), cmp);
+		for(int i=0; i<n; ++i) cout<<a[i]<<" ";
+		cout<<endl;
+	}
+}
+

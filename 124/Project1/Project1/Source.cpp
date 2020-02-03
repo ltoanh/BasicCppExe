@@ -8,8 +8,8 @@ using namespace std;
 
 int main() {
 	int t;
-	ifstream fin("124.txt", ios::in);
-	ofstream fout("124out.txt", ios::out);
+//	ifstream fin("124.txt", ios::in);
+//	ofstream fout("124out.txt", ios::out);
 	fin >> t;
 	while (t--) {
 		int n;

@@ -22,7 +22,6 @@ int main() {
 		int result = 0;
 		for (int i = 0; i < a.size(); ++i) {
 			int k = lower_bound(b.begin(), b.end(), a[i]) - b.begin();
-//			cout << k << " " << a[i] << endl;
 			b[k] = a[i];
 			result = max(result, k);
 		}

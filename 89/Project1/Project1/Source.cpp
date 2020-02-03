@@ -1,39 +1,26 @@
-#include<iostream>
-#include<fstream>
-#define cout fout
+#include<bits/stdc++.h>
+#define ll long long
 using namespace std;
+int t, n, k, a[1007];
 
-int main() {
-	int t;
-	ifstream fin("89.txt", ios::in);
-	ofstream fout("89out.txt", ios::out);
-	fin >> t;
-	while (t--) {
-		int n, k, a[1007];
-		fin >> n >> k;
-		for (int i = 1; i <= n; ++i) {
-			fin >> a[i];
-		}
-		float sum = INT_MIN;
-		int vt = 1;
-		for (int i = 1; i <= n - k + 1; ++i) {
-			float s = 0;
-			for (int j = i; j < i + k; ++j) {
-				s += a[j];
+main(){
+	cin>>t;
+	while(t--){
+		cin>>k>>n;
+		for(int i=0; i<n; ++i) cin>>a[i];
+		int M=0, pos=k-1;
+		for(int i=0; i<k; ++i) M+=a[i];
+		int ans=M;
+		for(int i=k; i<n; ++i){
+			ans+=a[i];
+			ans-=a[i-k];
+			if(ans>M){
+				M=ans;
+				pos=i;
 			}
-			s /= k;
-			if (s > sum) {
-				sum = s;
-				vt = i;
-//				cout << sum << " " << vt << endl;
-			}
-		}
-//		cout << endl;
-		for (int i = vt; i < vt + k; ++i) {
-			cout << a[i] << " ";
-		}
-		cout << endl;	
-	}
-	system("pause");
-	return 0;
+		} // end of for
+		for(int i=pos-k+1; i<=pos; ++i) cout<<a[i]<<" ";
+		cout<<endl;
+	}	
 }
+

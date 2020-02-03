@@ -14,7 +14,7 @@ main(){
 		string s;
 		getline(cin,s);
 //		cout<<s<<endl;
-		bool ktr=0;
+		bool ktr=1;
 		int dem=0;
 		for(int i=0; i<s.size(); ++i){
 			if(s[i]==' '){

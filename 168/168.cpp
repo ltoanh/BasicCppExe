@@ -1,41 +1,28 @@
-/*
-Dao nguoc cac tu trong xau
-VD: “I like this program very much”
-=> “much very program this like I”
-*/
-#include<iostream>
-#include<string>
-#include<algorithm>
-#include<fstream>
+#include<bits/stdc++.h>
 #define ll long long
 using namespace std;
-#define cin fin
+int t;
+string s;
 main(){
-	ifstream fin("168.txt", ios::in);
-	int t;
 	cin>>t;
 	cin.ignore();
 	while(t--){
-		string s;
-		getline(cin,s);
-		int st=0, end=0;
+		getline(cin, s);
+		vector<string> a;
+		string tp="";
 		for(int i=0; i<s.size(); ++i){
-			if(s[i]!=' '){
-				st=i;
-				while(s[i]!=' ' && i<s.size()){
-					++i;
-				}
+			if(i==s.size()-1){
+				tp+=s[i];
+				a.push_back(tp);
 			}
-			end=i-1;
-			int left=st, right=end;
-			while(left<=right){
-				swap(s[left], s[right]);
-				left++;
-				right--;
+			if(s[i]!=' ') tp+=s[i];
+			else if(s[i]==' ' || i==s.size()-1){
+				a.push_back(tp);
+				tp="";
 			}
-		}
-		reverse(s.begin(), s.end());
-		cout<<s<<endl;
+		}//end of for
+		for(int i=a.size()-1; i>=0; --i) cout<<a[i]<<" ";
+		cout<<endl;
 	}
 }
 

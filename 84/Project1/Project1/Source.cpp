@@ -1,35 +1,26 @@
-#include<iostream>
-#include<vector>
-#include<fstream>
-#define cout fout
+#include<bits/stdc++.h>
+#define ll long long
+#define MAX 100007
 using namespace std;
+int t, l, r;
+int a[MAX];
 
-int main() {
-	int t;
-	ifstream fin("84.txt", ios::in);
-	ofstream fout("84out.txt", ios::out);
-	fin >> t;
-	while (t--) {
-		int l, r;
-		fin >> l >> r;
-		vector<bool> snt(r + 1, true);
-		snt.at(0) = false;
-		snt.at(1) = false;
-		for (int i = 2; i*i <= r; ++i) {
-			if (snt.at(i)) {
-				for (int j = i * i; j <= r; j += i) {
-					snt.at(j) = false;
-				}
-			}
+void sang_nt(){
+	a[1]=a[0]=0;
+	for(int i=2; i<=MAX; ++i) a[i]=1;
+	for(int i=2; i<=sqrt(MAX); ++i){
+		if(a[i]){
+			for(int j=i*i; j<=MAX; j+=i) a[j]=0;
 		}
-		int dem = 0;
-		for (int i = l; i <= r; ++i) {
-			if (snt.at(i)) {
-				dem++;
-			}
-		}
-		cout << dem << endl;
 	}
-	system("pause");
-	return 0;
+	for(int i=1; i<=MAX; ++i) a[i]+=a[i-1];
+} 
+main(){
+	cin>>t;
+	sang_nt();
+	while(t--){
+		cin>>l>>r;
+		cout<<a[r]-a[l-1]<<endl;
+	}
 }
+

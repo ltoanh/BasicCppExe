@@ -1,48 +1,27 @@
-#include<iostream>
-#include<vector>
-#include<fstream>
-#define cout fout
+#include<bits/stdc++.h>
+#define ll long long
 using namespace std;
-bool check(int l, int r, vector<int> a) {
-	int i, j;
-	/*increasing*/
-	for (i = l + 1; i <= r; ++i) {
-		if (a.at(i) < a.at(i - 1)) {
-			break;
-		}
+int t, n, l, r;
+int a[10007];
+
+bool solve(){
+	int i=l;
+	while(i<r && a[i]<=a[r]){
+		i++;
 	}
-	if (i == r) {
-		return 1;
-	}
-	/*decreasing*/
-	for (j = i; i <= r; ++i) {
-		if (a.at(i) > a.at(i - 1)) {
-			break;
-		}
-	}
-	i -= 1;
-	if (i == r) {
-		return 1;
-	}
-	return 0;
+	if(i==l || i==r) return 0;
+	while(i<r && a[i]>=a[r]) i++;
+	if(i!=r) return 0;
+	return 1;
 }
-int main() {
+main(){
 	int t;
-	ifstream fin("83.txt", ios::in);
-	ofstream fout("83out.txt", ios::out);
-	fin >> t;
-	while (t--) {
-		int n, l, r;
-		vector<int> a;
-		fin >> n;
-		for (int i = 0; i < n; ++i) {
-			int x;
-			fin >> x;
-			a.push_back(x);
-		}
-		fin >> l >> r;
-		cout << (check(l, r, a) ? "YES" : "NO") << endl;
+	cin>>t;
+	while(t--){
+		cin>>n;
+		for(int i=0; i<n; ++i) cin>>a[i];
+		cin>>l>>r;
+		cout<<(solve()?"Yes":"No")<<endl;
 	}
-	system("pause");
-	return 0;
 }
+

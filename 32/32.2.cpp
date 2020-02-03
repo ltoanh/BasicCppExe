@@ -1,43 +1,38 @@
-#include<iostream>
-#include<algorithm>
-#include<vector>
+#include<bits/stdc++.h>
+#define ll long long
 using namespace std;
-int ucln(vector<int> a){
-	int uc=a[0];
-	for(int i=1; i<a.size(); ++i){
-		uc=__gcd(a[i],uc);
-	}
-	return uc;
-}
+
 main(){
 	int t;
 	cin>>t;
 	while(t--){
-		int n, a[100007];
+		int n;
 		cin>>n;
-		for(int i=0; i<n; ++i){
-			cin>>a[i];
-		}
-		sort(a,a+n);
-		int m=a[0];
+		int a[n+7];
+		for(int i=0; i<n; ++i) cin>>a[i];
+		/*tim uoc chung lon nhat cua cac phan tu co hieu khac 0*/
+		sort(a, a+n);
 		vector<int> b(n+7);
 		for(int i=1; i<n; ++i){
-			if(a[i]!=m){
-				b.push_back(a[i]-m);
-			}
+			if(a[i]-a[0]) b.push_back(a[i]-a[0]);
 		}
-		int ans=ucln(b);
-		long dem=0;
-		for(int i=1; i*i<=ans; ++i){
-			if(ans%i==0){
-				if(i==ans/i){
+		int ucln=b[0];
+		for(int i=1; i<b.size(); ++i){
+			ucln=__gcd(ucln, b[i]);
+		}
+		/*tim so uoc cua hieu*/
+		long dem=2;
+		for(int i=2; i*i<=ucln; ++i){
+			if(ucln%i==0){
+				if(i==ucln/i){
 					dem+=1;
 				}
 				else{
 					dem+=2;
 				}
-			}
-		}
+			} //end of if
+		} //end of for
 		cout<<dem<<endl;
 	}
 }
+

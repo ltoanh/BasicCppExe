@@ -1,28 +1,23 @@
-#include<iostream>
-#include<fstream>
-#define cout fout
+#include<bits/stdc++.h>
+#define ll long long
 using namespace std;
+int t, n, x;
 
-int main() {
-	int t;
-	ifstream fin("99.txt", ios::in);
-	ofstream fout("99out.txt", ios::out);
-	fin >> t;
-	while (t--) {
-		int n, a[3] = { 0 };
-		fin >> n;
-		for (int i = 1; i <= n; ++i) {
-			int x;
-			fin >> x;
-			a[x]++;
+main(){
+	cin>>t;
+	while(t--){
+		cin>>n;
+		string s0, s1, s2;
+		s0=s1=s2="";
+		for(int i=0; i<n; ++i){
+			cin>>x;
+			switch(x){
+				case 0: s0+="0 "; break;
+				case 1: s1+="1 "; break;
+				case 2: s2+="2 "; break;
+			}	
 		}
-		for (int i = 0; i <= 2; ++i) {
-			for (int j = 1; j <= a[i]; ++j) {
-				cout << i << " ";
-			}
-		}
-		cout << endl;
+		cout<<s0<<s1<<s2<<endl;
 	}
-	system("pause");
-	return 0;
 }
+
