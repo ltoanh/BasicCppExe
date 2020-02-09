@@ -1,2 +1,1 @@
-
-I will update soon
+đúng sai k chắc :v
